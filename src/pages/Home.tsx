@@ -142,7 +142,7 @@ const Home = () => {
             })}
           <Category options={categories} handleCategory={handleCategory} />
           <br></br> <br></br> <br></br> <br></br> <br></br> <br></br> <br></br> <br></br> <br></br> 
-        </MDBCol><br></br> <br></br> <br></br> <br></br> <br></br> <br></br> <br></br> <br></br> <br></br> 
+        </MDBCol>
       </MDBRow>
     </>
   );

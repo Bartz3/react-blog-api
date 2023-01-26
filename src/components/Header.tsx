@@ -22,6 +22,7 @@ type HeaderType = {
   appTitle: string;
 };
 
+
 const Header = ({ appTitle }: HeaderType) => {
   const [showNavColorThird, setShowNavColorThird] = useState(false);
   const user = useAppSelector((state) => state.user.userData);
@@ -53,13 +54,9 @@ const Header = ({ appTitle }: HeaderType) => {
                   Home
                 </MDBNavbarLink>
               </MDBNavbarItem>
-              {!user?.id ? (
-                <MDBNavbarItem>
-                  <MDBNavbarLink href="/login" >
-                    Login
-                  </MDBNavbarLink>
-                </MDBNavbarItem>
-              ) : null}
+              <MDBNavbarItem>
+                <MDBNavbarLink href="/login">Login</MDBNavbarLink>
+              </MDBNavbarItem>
               <MDBNavbarItem>
                 <MDBNavbarLink href="/news">News</MDBNavbarLink>
               </MDBNavbarItem>
