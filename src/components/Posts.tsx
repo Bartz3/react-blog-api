@@ -11,6 +11,7 @@ import {
 } from "mdb-react-ui-kit";
 import { Link } from "react-router-dom";
 import { useAppSelector } from "../redux/hooks";
+import Category from "./Category";
 
 interface PostsTypes {
   title: string;
@@ -24,6 +25,26 @@ interface PostsTypes {
   handleDelete: any;
 }
 
+const colors = ["#F44336", "#9C27B0", "#3F51B5", "#4CAF50", "#FFC107", "#009688"];
+
+function getCategoryColor(categoryName:String) {
+  switch(categoryName) {
+    case "Cat1":
+      return colors[0];
+    case "Cat2":
+      return colors[1];
+    case "Cat3":
+      return colors[2];
+    case "Cat4":
+      return colors[3];
+    case "Cat5":
+      return colors[4];
+    case "Cat6":
+      return colors[5]; 
+    default:
+      return "black";
+  }
+}
 const Posts = ({
   title,
   author,
@@ -51,7 +72,7 @@ const Posts = ({
             {excerpt(content)}
             <Link to={`/post/${id}`}>Read more</Link>
           </MDBCardText>
-          <p> Category: {category}</p>
+          <p style={{background:getCategoryColor(category),color:'white'}}> Category: {category}</p>
           <p> Author: {author}</p>
           <span>
             {user?.id && user?.role === 'admin'?
@@ -79,7 +100,9 @@ const Posts = ({
           </span>
         </MDBCardBody>
       </MDBCard>
+      
     </MDBCol>
+    
   );
 };
 

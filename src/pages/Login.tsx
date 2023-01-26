@@ -83,9 +83,11 @@ const Login = () => {
             className="form-control"
             placeholder="Put your password here..."
           />
+          <br></br>
           <input type="submit" className="btn btn-info" value="Submit" />
         </form>
       </div>
+      <br></br>
       <div className="container">
         <p>
           You don't have an account? Click <a href="/register">here</a> to
